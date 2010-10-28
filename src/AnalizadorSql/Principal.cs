@@ -23,7 +23,6 @@ using System;
 using System.IO;
 using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.Windsor;
-using Castle.Windsor.Configuration.Interpreters;
 
 namespace AnalizadorSql
 {
@@ -32,11 +31,12 @@ namespace AnalizadorSql
 		[STAThread]
 		static void Main()
 		{
-			using (var container = new WindsorContainer(new XmlInterpreter("castle.config")))
+			using (var container = new WindsorContainer())
 			{
 				// Necesario para que resuelva la dependecia de IReglaAnalisis[] reglas
-				// en la clase Analizador (PERO NO FUNCIONA, ver thread en AltNetHispano)
+				// en la clase Analizador
 				container.Kernel.Resolver.AddSubResolver(new ArrayResolver(container.Kernel));
+				container.Install(Castle.Windsor.Installer.Configuration.FromXmlFile("castle.config"));
 
 				var analizador = container.Resolve<Analizador>();
 				var notificador = container.Resolve<Notificador>();
