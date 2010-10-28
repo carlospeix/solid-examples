@@ -9,8 +9,6 @@ Thumbs.db
 *.aps
 *.pch
 *.vspscc
-*_i.c
-*_p.c
 *.ncb
 *.suo
 *.tlb
@@ -22,7 +20,6 @@ Thumbs.db
 [Bb]in
 [Dd]ebug*/
 *.lib
-*.sbr
 obj/
 [Rr]elease*/
 _ReSharper*/
