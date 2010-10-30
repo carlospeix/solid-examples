@@ -25,7 +25,6 @@ namespace Repositorios.Infraestructura
 			var c = CurrentSession.CreateCriteria<Cliente>();
 
 			c.Add(Restrictions.Eq("Provincia", provincia));
-
 			c.AddOrder(Order.Asc("RazonSocial"));
 
 			return c.List<Cliente>();
