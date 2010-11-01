@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="Modelo\IncorporadorDeClientes.cs" />
     <Compile Include="Modelo\Cliente.cs" />
+    <Compile Include="Servicios\IVerificadorCliente.cs" />
+    <Compile Include="Infraestructura\VerificadorFabrikam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicios\IRepositorioClientes.cs" />
   </ItemGroup>
